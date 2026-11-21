@@ -1,0 +1,22 @@
+{
+  "name": "vwo-playwright-ts",
+  "version": "1.0.0",
+  "private": true,
+  "description": "VWO web app regression test cases and Playwright (TypeScript) automation",
+  "scripts": {
+    "test": "playwright test",
+    "test:chromium": "playwright test --project=chromium",
+    "test:smoke": "playwright test --grep @smoke",
+    "test:login": "playwright test tests/login.spec.ts",
+    "report": "playwright show-report",
+    "typecheck": "tsc --noEmit",
+    "docs": "node scripts/generate-docs.mjs"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.14.0",
+    "@playwright/test": "^1.65.1",
+    "@types/node": "^26.6.6",
+    "dotenv": "^18.0.10",
+    "typescript": "^7.0.2"
+  }
+}
