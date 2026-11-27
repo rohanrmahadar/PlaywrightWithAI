@@ -1,0 +1,11 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "installCommand": "npm --prefix src/backend install && npm --prefix src/frontend install",
+  "buildCommand": "npm --prefix src/frontend run build",
+  "outputDirectory": "src/frontend/dist",
+  "functions": {
+    "api/index.js": { "maxDuration": 60, "includeFiles": "src/backend/TestPlan_Template.md" }
+  },
+  "rewrites": [{ "source": "/api/(.*)", "destination": "/api" }]
+}

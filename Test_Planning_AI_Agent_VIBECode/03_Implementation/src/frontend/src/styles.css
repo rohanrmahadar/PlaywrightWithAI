@@ -1,0 +1,68 @@
+:root {
+  --ink: #1d1d1f;
+  --muted: #6b6b70;
+  --line: #1d1d1f;
+  --bg: #ffffff;
+  --link: #2f6fe0;
+  --ok: #1a7f37;
+  --err: #c62828;
+  --warn-bg: #fff6e0;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+}
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); }
+a { color: var(--link); }
+[hidden] { display: none !important; }
+
+.app { max-width: 1000px; margin: 0 auto; padding: 16px; }
+.nav { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 16px; }
+.tab { background: none; border: 1.5px solid transparent; border-radius: 10px; padding: 6px 14px; font: inherit; cursor: pointer; }
+.tab.active { border-color: var(--line); }
+
+/* Wireframe-style rounded boxes from the design */
+.box { border: 1.5px solid var(--line); border-radius: 16px; background: var(--bg); }
+.page { border: 1.5px solid var(--line); border-radius: 20px; padding: 24px; }
+
+.main-page { display: flex; flex-direction: column; gap: 24px; }
+.reply { min-height: 420px; padding: 20px; overflow-x: auto; }
+.state { text-align: center; margin-top: 180px; font-size: 1.1rem; }
+.prompt { display: flex; gap: 8px; padding: 8px; }
+.prompt input { flex: 1; border: none; font: inherit; font-size: 1.05rem; padding: 8px; outline: none; background: transparent; }
+
+.btn { font: inherit; border: 1.5px solid var(--line); border-radius: 10px; padding: 8px 16px; background: var(--bg); cursor: pointer; }
+.btn.primary { background: var(--ink); color: #fff; }
+.btn:disabled { opacity: .5; cursor: not-allowed; }
+
+.settings-page h2 { margin: 0 0 16px; font-weight: 500; }
+.card { padding: 20px; margin-bottom: 16px; display: flex; flex-direction: column; gap: 10px; }
+.card h3 { margin: 0 0 4px; text-align: center; font-weight: 500; }
+.card label { display: flex; flex-direction: column; gap: 4px; font-size: .9rem; }
+.card label.radio { flex-direction: row; align-items: center; gap: 6px; font-size: 1rem; }
+.card input:not([type=radio]) { font: inherit; padding: 8px 10px; border: 1px solid #c8c8cc; border-radius: 8px; width: 100%; }
+.card ol { margin: 0; padding-left: 20px; display: flex; flex-direction: column; gap: 12px; }
+.card li > input { margin-top: 6px; }
+.row { display: flex; gap: 8px; flex-wrap: wrap; }
+.card .btn { align-self: flex-start; }
+
+.status { margin: 0; font-size: .9rem; }
+.ok { color: var(--ok); }
+.error { color: var(--err); }
+.muted { color: var(--muted); }
+.small { font-size: .8rem; }
+.warn { background: var(--warn-bg); padding: 6px 10px; border-radius: 8px; margin-top: 6px; }
+
+.source { font-size: .9rem; padding-bottom: 12px; border-bottom: 1px solid #ddd; margin-bottom: 12px; }
+.plan table { border-collapse: collapse; width: 100%; margin: 8px 0; font-size: .9rem; }
+.plan th, .plan td { border: 1px solid #ccc; padding: 6px 8px; text-align: left; vertical-align: top; }
+.plan th { background: #f4f4f6; }
+.plan blockquote { margin: 8px 0; padding: 4px 12px; border-left: 3px solid #e0a800; background: var(--warn-bg); }
+
+@media (max-width: 600px) {
+  .page { padding: 16px; }
+  .state { margin-top: 120px; }
+}
+.card textarea { font: .85rem ui-monospace, Consolas, monospace; padding: 8px 10px; border: 1px solid #c8c8cc; border-radius: 8px; width: 100%; resize: vertical; }
+.file-btn { display: inline-block; }
+.linkbtn { background: none; border: none; color: var(--link); text-decoration: underline; cursor: pointer; font: inherit; padding: 0; }
